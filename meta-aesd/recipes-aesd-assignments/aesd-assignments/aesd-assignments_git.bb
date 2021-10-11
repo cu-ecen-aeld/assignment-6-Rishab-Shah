@@ -4,11 +4,11 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda
 
 # TODO: Set this  with the path to your assignments rep.  Use ssh protocol and see lecture notes
 # about how to setup ssh-agent for passwordless access
-# SRC_URI = "git@github.com:cu-ecen-aeld/assignments-3-and-later-Rishab-Shah.git;protocol=ssh;branch=master"
+SRC_URI = "git://git@github.com/cu-ecen-aeld/assignments-3-and-later-Rishab-Shah;protocol=ssh;branch=master"
 
 PV = "1.0+git${SRCPV}"
 # TODO: set to reference a specific commit hash in your assignment repo
-SRCREV = "2f7aaa23975d4e49ec7f2dcc0191fd7657e8d039"
+SRCREV = "363bd7f591fd9ef564bfaa39dd04e87389d437cf"
 
 # This sets your staging directory based on WORKDIR, where WORKDIR is defined at 
 # https://www.yoctoproject.org/docs/latest/ref-manual/ref-manual.html#var-WORKDIR
@@ -22,6 +22,7 @@ FILES_${PN} += "${bindir}/aesdsocket"
 INITSCRIPT_PACKAGES = "${PN}"
 INITSCRIPT_NAME_${PN} = "aesdsocket-start-stop"
 inherit update-rc.d
+
 # TODO: customize these as necessary for any libraries you need for your application
 TARGET_LDFLAGS += "-pthread -lrt"
 
